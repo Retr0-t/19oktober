@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  color: #333;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Hero Typewriter */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-family: 'Sacramento', cursive;
+  color: #b30059;
+  margin-bottom: 20px;
+}
+
+/* Button Awal pakai icon */
+#startBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+#startBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+#startBtn img {
+  width: 250px;   /* ukuran icon diperbesar */
+  height: 250px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+#startBtn img:hover {
+  transform: scale(1.3); /* efek zoom saat hover */
+}
+
+
+
+/* Main Content */
+#main-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  padding: 70px 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Popup Umum */
+.popup {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: all 0.5s ease;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  z-index: 9999;
+  width: 300px;
+  max-width: 90%;
+  text-align: center;
+  pointer-events: none;
+}
+.popup.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+}
+.popup img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+.popup p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #b30059;
+}
+
+/* Quotes Section */
+.quotes {
+  padding: 40px 20px;
+  background: rgba(255,255,255,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Quotes Section */
+.quotes {
+  position: relative;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+  font-family: "poppins", cursive;
+  font-size: 2rem;
+  color: #b30059;
+}
+
+.quote {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+
+
+/* Story / Photo Grid */
+.story h2,
+.video h2 {
+  font-family: 'Sacramento', cursive;
+  font-size: 2rem;
+  color: #b30059;
+  margin-bottom: 20px;
+}
+
+.photo-grid {
+  position: relative;
+  width: 600px;      /* diperbesar 50% dari 400px */
+  height: 450px;     /* diperbesar 50% dari 300px */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.photo-grid img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;        
+  height: 100%;       
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+  border-radius: 20px;
+}
+.photo-grid img:first-child {
+  opacity: 1;         
+}
+
+/* Video Section */
+.video {
+  padding: 40px 20px;
+}
+.video video {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Menu Icon di bawah video */
+.menu-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.menu-icons a {
+  text-decoration: none;
+  color: #b30059;
+  font-weight: bold;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.menu-icons a img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+.menu-icons a:hover {
+  transform: scale(1.1);
+}
